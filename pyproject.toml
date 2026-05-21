@@ -1,5 +1,5 @@
 [project]
-name = "adutils"
+name = "lents_adutils"
 version = "0.1.0"
 description = ""
 authors = [
