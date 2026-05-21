@@ -38,6 +38,7 @@ class MyExploit(Exploit):
 Then you have to implement the `run(self, ip: str)` method, which gives you access to the IP address of one of the vulnbox you're targeting.
 
 ```python
+class MyExploit(Exploit):
     def run(self, ip: str):
         flag = exploit() # imagine you get the flag via exploit()
         self.flagout(flag) # you add the flag to a list of flags
@@ -58,11 +59,10 @@ if __name__ == "main":
 
 There are lots of options that allow you to fully customize the workflow. You can also override the existing methods to meet your needs.
 
-```
+```python
 # The Exploit initializer
 def __init__(
     self,
-    port: int,
     team_token: str,
     n_teams: int = 80,                                   # number of teams
     sleep_interval: int = 60,                            # time between cycles
