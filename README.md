@@ -49,10 +49,10 @@ At the end of each cycle, the `submit_flags` method will be run for you.
 If you want to run the full exploit, you create an instance of `MyExploit` and then call the `start` method. 
 
 ```python
-if __name__ == "main":
+if __name__ == "__main__":
     port = 1234
     team_token = "deadbeef"
-    my_exploit = MyExploit(port, team_token)
+    my_exploit = MyExploit(team_token)
 
     my_exploit.start()
 ```
@@ -72,5 +72,7 @@ def __init__(
     submit_timeout: int = 5,
     flag_ids_url: str = "http://10.10.0.1:8081/flagIds", # endpoint that exposes info for challenges
     flag_regex: Pattern = compile(r"^[A-Z0-9]{31}=$")
+    retry_unsuccessful: bool = False,                    # whether to re-run unsuccesful exploits
+    retry_unsuccessful_sleep_interval: int = 60,         # seconds to wait before retrying unsuccessful exploits
 ):
 ```
