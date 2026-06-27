@@ -1,6 +1,6 @@
 [project]
 name = "lents_adutils"
-version = "0.6.1"
+version = "0.7"
 description = ""
 authors = [
     {name = "Antonio Lentini",email = "111151429+lentscode@users.noreply.github.com"}
@@ -8,11 +8,15 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "requests (>=2.34.2,<3.0.0)"
+    "requests (>=2.34.2,<3.0.0)",
+    "platformdirs (>=4.0,<5.0)"
 ]
 
 [tool.poetry]
 packages = [{include = "adutils", from = "src"}]
+
+[tool.poetry.scripts]
+adutils = "adutils.cli:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
